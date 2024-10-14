@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  fastapi:
+    container_name: fastapi-aplicacion
+    platform: linux/x86_64
+    image: image-fastapi
+    build: .
+    ports:
+      - 8000:8000
+    restart: unless-stopped
+    volumes:
+      - .:/app
+    tty: true
